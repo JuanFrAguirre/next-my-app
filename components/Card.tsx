@@ -28,7 +28,7 @@ const Card: FC<props> = ({
       >
         <div
           className={`p-8 ${
-            isDarkTheme ? 'bg-blackish' : 'bg-lightWhite'
+            isDarkTheme ? 'bg-blackish' : 'bg-stone-200'
           } rounded-[4px]`}
         >
           <div className="flex justify-center">

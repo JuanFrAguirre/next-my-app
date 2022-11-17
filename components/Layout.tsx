@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { FC, useEffect, useRef } from 'react'
+import { FC, useRef } from 'react'
 import { useTheme } from '../context/ThemeContext'
 
 type props = {
@@ -24,7 +24,7 @@ const Layout: FC<props> = ({ children, title, bg, className }) => {
       className={`min-h-[100vh] relative ${
         darkThemeEnabled
           ? 'bg-blackish text-whitish'
-          : 'bg-lightWhite text-lightBlack'
+          : 'bg-stone-200 text-lightBlack'
       }`}
     >
       <Head>
@@ -45,10 +45,10 @@ const Layout: FC<props> = ({ children, title, bg, className }) => {
           >
             {`MyApp`}
           </Link>
-          <div className="overflow-hidden transition-all origin-right hover:-translate-x-[5px] ">
+          <div className="overflow-hidden transition-all origin-right ">
             <button
               onClick={handleSetTheme}
-              className={`inline-block mx-8 my-4 transition-all text-5xl w-16 h-16 hover:text-transparent bg-clip-text ${
+              className={`inline-block mx-8 my-4 transition-all text-5xl w-16 h-16 hover:-translate-x-[5px] hover:text-transparent bg-clip-text ${
                 darkThemeEnabled ? '' : 'rotate-[35deg]'
               } ${
                 darkThemeEnabled

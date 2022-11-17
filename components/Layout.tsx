@@ -6,18 +6,11 @@ import { useTheme } from '../context/ThemeContext'
 type props = {
   children: JSX.Element | JSX.Element[]
   title?: string
-  isHome?: boolean
   bg?: string
   className?: string
 }
 
-const Layout: FC<props> = ({
-  children,
-  title,
-  isHome = false,
-  bg,
-  className,
-}) => {
+const Layout: FC<props> = ({ children, title, bg, className }) => {
   const { darkThemeEnabled, setTheme } = useTheme()
   const headerRef = useRef<HTMLElement>(null)
   const mainRef = useRef<HTMLElement>(null)
@@ -68,13 +61,6 @@ const Layout: FC<props> = ({
           </div>
         </div>
       </header>
-      {isHome && (
-        <div className="flex items-center justify-center py-[5rem]">
-          <h1 className="font-extrabold text-center text-transparent text-7xl bg-clip-text bg-gradient-to-r h-20 from-purple-600 via-pink-600 to-orange-600 hover:scale-[1.01] transition-transform cursor-default duration-500 tracking-[3px]">
-            Welcome to MyApp
-          </h1>
-        </div>
-      )}
 
       <main
         ref={mainRef}

@@ -16,8 +16,13 @@ export default function Home({ links }: Props) {
   const { darkThemeEnabled } = useTheme()
 
   return (
-    <Layout isHome>
+    <Layout>
       <div>
+        <div className="flex items-center justify-center py-[5rem]">
+          <h1 className="font-extrabold text-center text-transparent text-7xl bg-clip-text bg-gradient-to-r h-20 from-purple-600 via-pink-600 to-orange-600 hover:scale-[1.01] transition-transform cursor-default duration-500 tracking-[3px]">
+            Welcome to MyApp
+          </h1>
+        </div>
         <div className="flex flex-wrap justify-center max-w-5xl mx-auto gap-[60px]">
           {links
             ? links.map((x) => (
